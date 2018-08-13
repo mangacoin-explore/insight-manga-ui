@@ -18,16 +18,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
         var response;
 
-        if (this.symbol === 'USD') {
-          response = _roundFloat((value * this.factor), 2);
-        } else if (this.symbol === 'lites') {
-          this.factor = 1000;
-          response = _roundFloat((value * this.factor), 5);
-        } else if (this.symbol === 'photons') {
-          this.factor = 1000000;
-          response = _roundFloat((value * this.factor), 2);
-        } else {
-          this.factor = 1;
+        if (this.symbol === 'MANGA') {
           response = value;
         }
         // prevent sci notation
@@ -43,15 +34,7 @@ angular.module('insight.currency').controller('CurrencyController',
       $rootScope.currency.symbol = currency;
       localStorage.setItem('insight-currency', currency);
 
-      if (currency === 'USD') {
-        Currency.get({}, function(res) {
-          $rootScope.currency.factor = $rootScope.currency.bitstamp = res.data.bitstamp;
-        });
-      } else if (currency === 'lites') {
-        $rootScope.currency.factor = 1000;
-      } else if (currency === 'photons') {
-        $rootScope.currency.factor = 1000000;
-      } else {
+      if (currency === 'MANGA') {
         $rootScope.currency.factor = 1;
       }
     };
