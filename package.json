@@ -38,7 +38,7 @@
     "mangacore",
     "front-end"
   ],
-  "bitcoreNode": "mangacore-node",
+  "mangacoreNode": "mangacore-node",
   "dependencies": {},
   "devDependencies": {
     "bower": "~1.2.8",
